@@ -13,6 +13,7 @@ use Yii;
  * @property string $created_at
  * @property string $updated_at
  * @property integer $user_id
+ * @property string $name
  *
  * @property User $user
  */
@@ -37,7 +38,7 @@ class Post extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'safe'],
             [['user_id'], 'integer'],
             [['title'], 'string', 'max' => 255],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => 'dektrium\user\models\User', 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
