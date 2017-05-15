@@ -32,7 +32,11 @@ class PostController extends Controller
     public function beforeAction($action)
     {
         if (
-            $action->id == 'update'
+            (
+                $action->id == 'update'
+                ||
+                $action->id == 'delete'
+            )
             &&
             !(
                 Yii::$app->user->getIdentity()

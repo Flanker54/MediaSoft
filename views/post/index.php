@@ -34,7 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $user->username;
                 }
             ],
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view}{update}{delete}',
+                'visible' => (Yii::$app->user->getIdentity() && Yii::$app->user->getIdentity()->status === 'A'),
+            ],
         ],
     ]); ?>
 </div>

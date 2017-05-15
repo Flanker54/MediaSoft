@@ -5,7 +5,7 @@ CREATE TABLE `post` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
+  `user_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `post`
@@ -19,3 +19,6 @@ ALTER TABLE `post`
 
 INSERT INTO `user` (`username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`, `last_login_at`) VALUES
 ( 'anononimous', 'anon@anon.ru', '1', '1', 1494796687, '', 0, '127.0.0.1', 40552, 40552, 0, 0);
+
+INSERT INTO `user` (`username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`, `status`, `last_login_at`) VALUES
+( 'admin', 'admin@admin.ru', '1', '1', 1494796687, '', 0, '127.0.0.1', 40552, 40552, 0,'A', 0);
