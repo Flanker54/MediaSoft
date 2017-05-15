@@ -20,5 +20,5 @@ ALTER TABLE `post`
 INSERT INTO `user` (`username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`, `last_login_at`) VALUES
 ( 'anononimous', 'anon@anon.ru', '1', '1', 1494796687, '', 0, '127.0.0.1', 40552, 40552, 0, 0);
 
-INSERT INTO `user` (`username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`, `status`, `last_login_at`) VALUES
-( 'admin', 'admin@admin.ru', '1', '1', 1494796687, '', 0, '127.0.0.1', 40552, 40552, 0,'A', 0);
+INSERT INTO `user` (`id`, `username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`, `last_login_at`, `status`) VALUES
+(16, 'admin', 'admin@admin.com', '$2y$10$5w/BNiyWOqoQsHByib50SOGYzJiCx/XTToD.SvFHNxr6dJ1q7Fiim', 'bDN7znj0Yi9h0kHaDNeSteobzHUHFMSh', 1494836218, NULL, NULL, '127.0.0.1', 1494836218, 1494836218, 0, 1494836225, 'A');
