@@ -29,6 +29,22 @@ class PostController extends Controller
         ];
     }
 
+    public function beforeAction($action)
+    {
+        if (
+            $action->id == 'update'
+            &&
+            !(
+                Yii::$app->user->getIdentity()
+                && Yii::$app->user->getIdentity()->status === 'A'
+            )
+        ) {
+            $this->redirect(['post/index']);
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Lists all Post models.
      * @return mixed
@@ -40,7 +56,7 @@ class PostController extends Controller
             'pagination' => [
                 'pageSize' => 10,
             ],
-            'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]]
+            'sort' => ['defaultOrder' => ['created_at' => SORT_DESC]]
         ]);
 
         return $this->render('index', [

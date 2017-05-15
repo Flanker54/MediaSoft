@@ -38,7 +38,7 @@ class AdminController extends Controller
             )
         ) {
             $this->redirect(['post/index']);
-            return true;
+            return false;
         }
         return true;
     }
