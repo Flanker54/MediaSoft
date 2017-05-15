@@ -37,6 +37,10 @@ class PostController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Post::find(),
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+            'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]]
         ]);
 
         return $this->render('index', [

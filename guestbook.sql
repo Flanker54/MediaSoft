@@ -10,3 +10,6 @@ CREATE TABLE `post` (
 
 INSERT INTO `user` (`username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`, `last_login_at`) VALUES
 ( 'anononimous', 'anon@anon.ru', '1', '1', 1494796687, '', 0, '127.0.0.1', 40552, 40552, 0, 0);
+
+ALTER TABLE `post`
+  ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
