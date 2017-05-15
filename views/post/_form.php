@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?php
         if (Yii::$app->user->isGuest) {
-            echo $form->field($model, 'name')->textInput(['maxlength' => 50]);
+            echo $form->field($model, 'user_name')->textInput(['maxlength' => 50]);
         }
     ?>
 
