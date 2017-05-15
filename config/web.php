@@ -10,9 +10,7 @@ $config = [
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
-            'modelMap' => [
-                'User' => 'app\models\User',
-            ],
+            'enableConfirmation' => false,
         ],
     ],
     'components' => [
