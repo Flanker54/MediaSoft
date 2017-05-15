@@ -36,6 +36,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
+            ['label' => 'Users', 'url' => ['/admin'], 'visible' => (Yii::$app->user->getIdentity() && Yii::$app->user->getIdentity()->status === 'A')],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/user/security/login']] :
                 ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
