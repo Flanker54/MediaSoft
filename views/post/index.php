@@ -22,6 +22,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             'title',
             'description:ntext',
+            [
+                'attribute' => 'username',
+                'value' => function ($model, $key, $index, $widget)
+                {
+                    if ($model->user_id == 1) {
+                        return $model->user_name . ' (anonimous)';
+                    }
+
+                    $user = dektrium\user\models\User::findIdentity($model->user_id);
+                    return $user->username;
+                }
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
